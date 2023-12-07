@@ -6,7 +6,7 @@ Site links Secretária da Saúde de Contagem
 
 * César Pereira
 * Gustavo Venâncio
-* Filipe Freita
+* Filipe Freitas
 
 ### Instruções de Utilização
 
