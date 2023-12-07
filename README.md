@@ -4,11 +4,9 @@ Site links Secretária da Saúde de Contagem
 
 ### Integrantes
 
-* César Pereira dos Santos Filho
-
-### Orientador
-
-* 
+* César Pereira
+* Gustavo Venâncio
+* Filipe Freita
 
 ### Instruções de Utilização
 
@@ -37,7 +35,7 @@ Caso você tenha alguma dúvida ou precise de assistência, entre em contato com
 
 ### Hospedagem
 
-* [Github Pages](https://pages.github.com/)
+* [Github Pages](https://ieeeza.github.io/site-secretaria/)
 
 ### Armazenamento do Código-Fonte
 
