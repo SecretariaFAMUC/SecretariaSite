@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS CONTAGEM</title>
+    <link rel="stylesheet" href="mainpage.css">
+    <script async src="mainpage.js"></script>
+</head>
+<body>
+
+    <div class="containerLoginHide" id="containerLogin">
+        <div class="login">
+            <div>
+                <div class="headerLogin">
+                    <div class="loginTittle">
+                        <p>Login</p>
+                        <p>Informe seus dados para acessar</p>
+                    </div>
+                    <div>
+                        <img src="/imgs/fechar icon.png" id="closeLoginButton">
+                    </div>
+                </div>
+                <div class="form">
+                    <form action="post">
+                        <div class="loginEmail">
+                            <label for="emailLogin">Email:</label>
+                            <input type="text" id="emailLogin" name="emailLogin">
+                        </div>
+                        <div class="loginPassword">
+                            <label for="passwordLogin">Senha:</label>
+                            <input type="text" id="passwordLogin" name="passwordLogin">
+                            <div class="forgetAccount">
+                                <p>Esqueci minha <a id="forgetAccountButton">senha</a></p>
+                            </div>
+                        </div>
+                        <div class="loginButton">
+                            <button type="submit">ENTRAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="createAccount">
+                <p >Não tem uma conta ainda ? <a class="createAccountButton" id="openContainerRegister">Crie uma aqui</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="containerForgetAccountHide" id="containerForgetAccount">
+        <div class="forget">
+            <div class="headerForget">
+                <div>
+                    <img id="backLoginButton2" src="/imgs/voltar icon.png">
+                </div>
+                <div class="forgetTittle">
+                    <p>Selecione o formato que deseja usar para restaurar a senha</p>
+                </div>
+                <div class="headerImgRegister">
+                    <img id="closeForgetButton" src="/imgs/fechar icon.png" id="closeLoginButton">
+                </div>
+            </div>
+
+            <div class="forgetTypes">
+                    <button id="forgetTypeEmailSelect">EMAIL</button>
+                    <button id="forgetTypeNumberSelect">NÚMERO DE CELULAR</button>
+            </div>
+            
+            <div class="forgetTypeEmailHide" id="forgetTypeEmail">
+                <div class="forgetTittleEmail">
+                    <p>Informe o Email no campo abaixo:</p>
+                </div>
+                <form action="post">
+                    <div class="formForget">
+                        <input type="text" name="forgetAccount">
+                        <button>SOLICITAR</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="forgetTypeNumberHide" id="forgetTypeNumber">
+                <div class="TypeNumberHeader">
+                    <div class="forgetTittleNumber">
+                        <p>Informe o Número no campo abaixo</p>
+                    </div>
+                </div>
+                <form action="post">
+                    <div class="formForget">
+                        <input type="text" name="forgetAccount">
+                        <button>SOLICITAR</button>
+                    </div>
+                </form>
+            </div> 
+        </div>
+    </div>
+
+    <div class="containerRegisterHide" id="containerRegister">
+        <div class="register">
+            <div>
+                <div class="headerRegister">
+                    <div>
+                        <img id="backLoginButton" src="/imgs/voltar icon.png">
+                    </div>
+                    <div class="registerTittle">
+                        <p>REGISTRAR</p>
+                        <p>Informe seus dados para cadastro</p>
+                    </div>
+                    <div class="headerImgRegister">
+                        <img id="closeRegisterButton" src="/imgs/fechar icon.png" id="closeRegisterButton">
+                    </div>
+                </div>
+                <form action="post">
+                    <div class="formRegister">
+                        <div class="registerEmailContainer">
+                            <div class="registerEmail">
+                                <label for="emailLogin">Email:</label>
+                                <input type="email" name="emailLogin" required maxlength="100">
+                            </div>
+                            <div class="registerEmail">
+                                <label for="emailLogin">Confirme o email:</label>
+                                <input type="email" name="emailLogin" required maxlength="100">
+                            </div>
+                        </div>
+                        <div class="registerPasswordContainer">
+                            <div class="registerPassword">
+                                <label for="passwordRegsiter">Senha:</label>
+                                <input type="password" name="passwordRegister" required maxlength="50">
+                            </div>
+                            <div class="registerPassword">
+                                <label for="passwordRegister">Confirme sua senha:</label>
+                                <input type="password" name="passwordRegister" required maxlength="50">
+                            </div>
+                        </div>
+                        <div class="registerNameNumberContainer">
+                            <div class="registerName">
+                                <label for="nameRegister">Digite seu nome completo:</label>
+                                <input type="text" name="registerName" required maxlength="70">
+                            </div>
+                            <div class="registerNumber">
+                                <label for="numberRegister">Digite um número para contato:</label>
+                                <input type="number" name="numberRegister" required onkeydown="validateField(e)">
+                            </div>
+                        </div>
+                        <div class="loginButton">
+                            <button type="submit">CADASTRAR</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <header class="header">
+        <div class="headerLogo">
+            <img class="headerLogoImg" src="/imgs/bandeira contagem.jpeg" alt="Brasão de Contagem">
+        </div>
+        <div class="headerInfo">
+            <div class="headerInfoTop">
+                <div class="headerInfoAddress">
+                    <img class="headerInfoImg" src="/imgs/localização icon.png" alt="Imagem ilustrativa localização">
+                    <a class="headerInfoText" href="https://www.google.com/maps/search/Avenida-General-David-Sarnoff,-nº-3.113,-bairro-Cidade-Industrial.-Contagem---MG---CEP-32.210-110/@-19.9528896,-44.0185532,17z/data=!3m1!4b1?entry=ttu" target="_blank">Avenida General David Sarnoff, nº 3.113, bairro Cidade Industrial. Contagem - MG - CEP 32.210-110</a>
+                </div>
+                <div class="headerInfoNumber">
+                    <img class="headerInfoImg" src="/imgs/whatsapp icon.png" alt="Imagem ilustrativa whatsapp">
+                    <a class="infoText" href="https://wa.me/+55313472629" target="_blank">
+                    (31)3472-6299
+                    </a>
+                </div>
+                <div class="entry" id="openContainerLogin">
+                    <img class="entryImg" src="/imgs/cadeado icon.png" alt="Imagem ilustrativa de um cadeado">
+                    <p>LOGIN / CADASTRO</p>
+                </div>
+            </div>
+            <div class="headerInfoBottom">
+                <p class="headerTittle">SMS CONTAGEM SAÚDE SERVIDOR WEB</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="navOptions">
+            <li class="navOptionsList">PRINCIPAL</li>
+            <li class="navOptionsList">A SMS</li>
+            <li class="navOptionsList">CONHEÇA UBS</li>
+            <li class="navOptionsList">SERVIÇOS</li>
+            <li class="navOptionsList">INFORMATIVOS</li> 
+        </div>
+        <div class="navSearch">
+            <label class="navSearchLabel">
+                <input class="navSearchLabelInput" type="text" name="pesquisar" id="inputSearch">
+            </label>
+            <img class="navSearchImg" src="/imgs/lupa icon.png" alt="Imagem de lupa de pesquisa ilustrativa">
+        </div>
+    </nav>
+
+    <div class="mostAccessedContainer">
+        <div class="containerMark">
+            <img class="accessedImg" src="/imgs/estrela icon.png" alt="Imagem Ilustrativa de uma estrela">
+            <p class="">SITES MAIS ACESSADOS</p>
+        </div>
+    </div>
+
+    <div class="bookmarksContainer">
+        <a href="http://saudechamados.contagem.mg.gov.br:9191/informatica/">
+            <img src="/imgs/INFORMÁTICA LOGO.png" alt="">
+        </a>
+        <a href="http://saudechamados.contagem.mg.gov.br:9191/chamado/index.php">
+            <img src="/imgs/MANUTENÇÃO LOGO.png" alt="">
+        </a>
+        <a href="http://saudechamados.contagem.mg.gov.br:9191/transporte/index.php">
+            <img src="/imgs/TRANSPORTE LOGO.png" alt="">
+        </a>
+        <a href="https://www.montesclaros-mg.vivver.com/login">
+            <img src="/imgs/VIVVER LOGO.png" alt="">
+        </a>
+        <a href="https://www.montesclaros-mg.vivver.com/login">
+            <img src="/imgs/VIVVER LOGO.png" alt="">
+        </a>
+    </div>
+
+    <main class="main">
+        <div class="mainSideContainer">
+            <p class="mainTittle">LISTA DE SITES</p>
+        </div>
+        <div class="mainContainer">
+            <div class="mainContainerLink">
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/INFORMÁTICA LOGO.png" alt="Imagem GLPI informática">
+                    <a href="http://saudechamados.contagem.mg.gov.br:9191/informatica/">
+                        <p class="containerLinkTittle">SISTEMA DE CHAMADOS GLPI INFORMÁTICA</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/MANUTENÇÃO LOGO.png" alt="Imagem do GLPI manutenção">
+                    <a href="http://saudechamados.contagem.mg.gov.br:9191/chamado/index.php">
+                        <p class="containerLinkTittle">SISTEMA DE CHAMADOS GLPI MANUTENÇÃO</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/TRANSPORTE LOGO.png" alt="Imagem GLPI transporte">
+                    <a href="http://saudechamados.contagem.mg.gov.br:9191/transporte/index.php">
+                        <p class="containerLinkTittle">SISTEMA DE CHAMADOS GLPI TRANSPORTE</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>
+                </div>
+            </div>
+            <div class="mainContainerLink">
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>
+                </div>
+            </div>
+            <div class="mainContainerLink">
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>
+                </div>
+                <div class="containerLink">
+                    <img class="containerLinkImg" src="/imgs/VIVVER LOGO.png" alt="Imagem do relacionada ao link">
+                    <a href="https://www.montesclaros-mg.vivver.com/login">
+                        <p class="containerLinkTittle">SISTEMA VIVVER</p>
+                    </a>        
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="socialMediasContainer">
+        <div class="socialMediasTittle">
+            <p class="socialMediasTittle">MEDIAS SÓCIAIS</p>
+        </div>
+        <div class="socialMediasLink">
+            <a href="https://www.facebook.com/prefeituracontagem/?locale=pt_BR" target="_blank" class="socialMedias">
+                <img src="/imgs/facebook logo.png" alt="FACEBOOK LOGO">
+            </a>
+            <a href="https://www.instagram.com/prefcontagem/" target="_blank" class="socialMedias">
+                <img src="/imgs/INSTAGRAM LOGO.png" alt="INSTAGRAM LOGO">
+            </a>
+            <a href="https://br.linkedin.com/company/prefeitura-municipal-de-contagem" target="_blank" class="socialMedias">
+                <img src="/imgs/LINKEDIN LOGO.png" alt="LINKEDIN LOGO" >
+            </a>
+            <a href="https://twitter.com/home" target="_blank" class="socialMedias">
+                <img src="/imgs/twitter icon.png" alt="X LOGO">
+            </a>
+        </div>
+    </div>
+
+    <section>
+        <div class="carrosel">
+            <div class="slides">
+                <input type="radio" name="radiobtn" id="radio1" checked>
+                <input type="radio" name="radiobtn" id="radio2">
+                <input type="radio" name="radiobtn" id="radio3">
+                <input type="radio" name="radiobtn" id="radio4">
+                <div class="slide first">
+                    <img src="/imgs/IMAGEM TESTE.png" alt="IMAGEM CARROSEL">
+                </div>
+                <div class="slide">
+                    <img src="/imgs/IMAGEM TESTE.png" alt="IMAGEM CARROSEL">
+                </div>
+                <div class="slide">
+                    <img src="/imgs/IMAGEM TESTE.png" alt="IMAGEM CARROSEL">
+                </div>
+                <div class="slide">
+                    <img src="/imgs/IMAGEM TESTE.png" alt="IMAGEM CARROSEL">
+                </div>
+                <div class="navigationAuto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+            </div>
+            <div class="navigationManual">
+                <label for="radio1" class="manualBtn"></label>
+                <label for="radio2" class="manualBtn"></label>
+                <label for="radio3" class="manualBtn"></label>
+                <label for="radio4" class="manualBtn"></label>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footerDescription">
+            <p class="footerBackToTop" id="backToTopButton">VOLTAR AO TOPO</p>
+            <p class="footerDescriptionText">All rights reserved to Secretária da Saúde de Contagem</p>
+        </div>
+    </footer>
+
+</body>
+</html>
