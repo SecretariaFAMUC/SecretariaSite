@@ -94,11 +94,6 @@ forgetTypeNumberSelect.addEventListener("click", () => {
     }
 });
 
-
-function validateField(event) {
-    console.log(event.target)
-}
-
 let count = 1;
 document.getElementById("radio1").checked = true;
 

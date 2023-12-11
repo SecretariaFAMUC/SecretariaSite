@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+.header {
+    display: flex;
+}
+
+.headerInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.headerInfoTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.headerInfoImg {
+    width: 25px;
+    height: 25px;
+}
+
+.headerInfoAddress {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.headerInfoNumber {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.headerInfoBottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerTittle {
+    font-size: 50px;
+    padding-top: 5px;
+}
+
+.entry {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 5px 0 5px 10px;
+    cursor: pointer;
+}
+
+.entryImg {
+    width: 25px;
+    height: 25px;
+}
+
+nav {
+    margin: auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navOptions {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.navOptions li {
+    list-style: none;
+}
+
+.navOptions li:hover {
+    cursor: pointer;
+}
+
+.navSearch {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navSearchImg {
+    width: 25px;
+    height: 25px;
+}
